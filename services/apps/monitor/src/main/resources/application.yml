@@ -5,16 +5,17 @@ spring:
     default: local
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: ${MONITOR_DDL_AUTO:update}
     open-in-view: false
     properties:
       hibernate:
-        default_schema: monitor
+        default_schema: ${MONITOR_DB_SCHEMA:monitor}
   flyway:
-    enabled: ${FLYWAY_ENABLED:true}
-    schemas: monitor
-    default-schema: monitor
+    enabled: ${MONITOR_FLYWAY_ENABLED:true}
+    schemas: ${MONITOR_DB_SCHEMA:monitor}
+    default-schema: ${MONITOR_DB_SCHEMA:monitor}
     create-schemas: true
+    baseline-on-migrate: true
 management:
   endpoints:
     web:

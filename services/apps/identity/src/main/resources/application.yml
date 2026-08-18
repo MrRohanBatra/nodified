@@ -5,16 +5,17 @@ spring:
     default: local
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: ${IDENTITY_DDL_AUTO:update}
     open-in-view: false
     properties:
       hibernate:
-        default_schema: identity
+        default_schema: ${IDENTITY_DB_SCHEMA:identity}
   flyway:
-    enabled: ${FLYWAY_ENABLED:true}
-    schemas: identity
-    default-schema: identity
+    enabled: ${IDENTITY_FLYWAY_ENABLED:true}
+    schemas: ${IDENTITY_DB_SCHEMA:identity}
+    default-schema: ${IDENTITY_DB_SCHEMA:identity}
     create-schemas: true
+    baseline-on-migrate: true
 management:
   endpoints:
     web:
