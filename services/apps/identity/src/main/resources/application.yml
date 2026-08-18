@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: identity
+  profiles:
+    default: local
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        default_schema: identity
+  flyway:
+    enabled: ${FLYWAY_ENABLED:true}
+    schemas: identity
+    default-schema: identity
+    create-schemas: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

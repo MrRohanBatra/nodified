@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: monitor
+  profiles:
+    default: local
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        default_schema: monitor
+  flyway:
+    enabled: ${FLYWAY_ENABLED:true}
+    schemas: monitor
+    default-schema: monitor
+    create-schemas: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

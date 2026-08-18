@@ -1,0 +1,5 @@
+rootProject.name = 'nodified'
+
+include ':services:apps:gateway'
+include ':services:apps:identity'
+include ':services:apps:monitor'
