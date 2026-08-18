@@ -1,13 +1,14 @@
 spring:
   datasource:
-    url: ${NODIFIED_DB_URL:jdbc:postgresql://localhost:5432/nodified}
-    username: ${NODIFIED_DB_USERNAME:nodified}
-    password: ${NODIFIED_DB_PASSWORD:nodified}
+    url: ${MONITOR_DB_URL:jdbc:postgresql://localhost:5432/nodified}
+    username: ${MONITOR_DB_USERNAME:nodified}
+    password: ${MONITOR_DB_PASSWORD:nodified}
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${JWT_ISSUER_URI:http://localhost:8081}
+          issuer-uri: ${MONITOR_JWT_ISSUER_URI:http://localhost:8081}
 
 server:
-  port: ${SERVER_PORT:8082}
+  port: ${MONITOR_PORT:8082}
+

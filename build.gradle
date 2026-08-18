@@ -25,4 +25,10 @@ subprojects {
             useJUnitPlatform()
         }
     }
+
+    plugins.withId('org.springframework.boot') {
+        tasks.named('jar') {
+            enabled = false
+        }
+    }
 }

@@ -1,13 +1,14 @@
 spring:
   datasource:
-    url: ${NODIFIED_DB_URL:jdbc:postgresql://localhost:5432/nodified}
-    username: ${NODIFIED_DB_USERNAME:nodified}
-    password: ${NODIFIED_DB_PASSWORD:nodified}
+    url: ${IDENTITY_DB_URL:jdbc:postgresql://localhost:5432/nodified}
+    username: ${IDENTITY_DB_USERNAME:nodified}
+    password: ${IDENTITY_DB_PASSWORD:nodified}
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${JWT_ISSUER_URI:http://localhost:8081}
+          issuer-uri: ${IDENTITY_JWT_ISSUER_URI:http://localhost:8081}
 
 server:
-  port: ${SERVER_PORT:8081}
+  port: ${IDENTITY_PORT:8081}
+
