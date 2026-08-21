@@ -10,12 +10,6 @@ spring:
     properties:
       hibernate:
         default_schema: ${IDENTITY_DB_SCHEMA:identity}
-  flyway:
-    enabled: ${IDENTITY_FLYWAY_ENABLED:true}
-    schemas: ${IDENTITY_DB_SCHEMA:identity}
-    default-schema: ${IDENTITY_DB_SCHEMA:identity}
-    create-schemas: true
-    baseline-on-migrate: true
 management:
   endpoints:
     web:

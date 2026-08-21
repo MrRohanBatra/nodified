@@ -10,12 +10,6 @@ spring:
     properties:
       hibernate:
         default_schema: ${MONITOR_DB_SCHEMA:monitor}
-  flyway:
-    enabled: ${MONITOR_FLYWAY_ENABLED:true}
-    schemas: ${MONITOR_DB_SCHEMA:monitor}
-    default-schema: ${MONITOR_DB_SCHEMA:monitor}
-    create-schemas: true
-    baseline-on-migrate: true
 management:
   endpoints:
     web:

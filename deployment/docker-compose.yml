@@ -14,7 +14,7 @@ services:
       IDENTITY_DB_USERNAME: postgres.ziievcsvbjkgjylempre
       IDENTITY_DB_PASSWORD: TheR0hanBatra
       IDENTITY_DB_SCHEMA: identity
-      IDENTITY_FLYWAY_ENABLED: true
+      IDENTITY_DDL_AUTO: update
       IDENTITY_JWT_ISSUER_URI: http://localhost:8081
     ports:
       - "8081:8081"
@@ -36,7 +36,7 @@ services:
       MONITOR_DB_USERNAME: postgres.ziievcsvbjkgjylempre
       MONITOR_DB_PASSWORD: TheR0hanBatra
       MONITOR_DB_SCHEMA: monitor
-      MONITOR_FLYWAY_ENABLED: true
+      MONITOR_DDL_AUTO: update
       MONITOR_JWT_ISSUER_URI: http://localhost:8081
     ports:
       - "8082:8082"
