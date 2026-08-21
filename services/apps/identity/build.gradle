@@ -1,20 +1,24 @@
 plugins {
-    id 'java'
-    alias(libs.plugins.spring.boot)
-    alias(libs.plugins.spring.dependency.management)
+  id 'java'
+  alias(libs.plugins.spring.boot)
+  alias(libs.plugins.spring.dependency.management)
+}
+
+bootJar {
+  archiveFileName = 'identity.jar'
 }
 
 dependencies {
-    implementation libs.spring.boot.starter.web
-    implementation libs.spring.boot.starter.data.jpa
-    implementation libs.spring.boot.starter.validation
-    implementation libs.spring.boot.starter.security
-    implementation libs.spring.boot.starter.oauth2.resource.server
-    implementation libs.spring.boot.starter.actuator
-    implementation libs.springdoc.openapi
-    runtimeOnly libs.postgresql
-    compileOnly libs.lombok
-    annotationProcessor libs.lombok
-    testImplementation libs.spring.boot.starter.test
-    testImplementation libs.spring.security.test
+  implementation libs.spring.boot.starter.web
+  implementation libs.spring.boot.starter.data.jpa
+  implementation libs.spring.boot.starter.validation
+  implementation libs.spring.boot.starter.security
+  implementation libs.spring.boot.starter.oauth2.resource.server
+  implementation libs.spring.boot.starter.actuator
+  implementation libs.springdoc.openapi
+  runtimeOnly libs.postgresql
+  compileOnly libs.lombok
+  annotationProcessor libs.lombok
+  testImplementation libs.spring.boot.starter.test
+  testImplementation libs.spring.security.test
 }
