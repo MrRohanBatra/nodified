@@ -16,6 +16,7 @@ dependencies {
   implementation libs.spring.boot.starter.oauth2.resource.server
   implementation libs.spring.boot.starter.actuator
   implementation libs.springdoc.openapi
+  implementation libs.modelMapper
   runtimeOnly libs.postgresql
   compileOnly libs.lombok
   annotationProcessor libs.lombok
