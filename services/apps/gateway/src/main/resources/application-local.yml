@@ -1,0 +1,10 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${GATEWAY_JWT_ISSUER_URI:http://localhost:8081}
+
+server:
+  port: ${GATEWAY_PORT:8080}
+

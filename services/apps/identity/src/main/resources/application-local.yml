@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${IDENTITY_DB_URL:jdbc:postgresql://localhost:5432/nodified}
+    username: ${IDENTITY_DB_USERNAME:nodified}
+    password: ${IDENTITY_DB_PASSWORD:nodified}
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${IDENTITY_JWT_ISSUER_URI:http://localhost:8081}
+
+server:
+  port: ${IDENTITY_PORT:8081}
+

@@ -1,0 +1,34 @@
+plugins {
+    alias(libs.plugins.spring.boot) apply false
+    alias(libs.plugins.spring.dependency.management) apply false
+    alias(libs.plugins.protobuf) apply false
+}
+
+allprojects {
+    group = 'com.nodified'
+    version = '0.1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    plugins.withId('java') {
+        java {
+            toolchain {
+                languageVersion = JavaLanguageVersion.of(21)
+            }
+        }
+
+        tasks.withType(Test).configureEach {
+            useJUnitPlatform()
+        }
+    }
+
+    plugins.withId('org.springframework.boot') {
+        tasks.named('jar') {
+            enabled = false
+        }
+    }
+}

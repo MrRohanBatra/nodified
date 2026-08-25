@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: ${IDENTITY_DB_URL}
+    username: ${IDENTITY_DB_USERNAME}
+    password: ${IDENTITY_DB_PASSWORD}
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${IDENTITY_JWT_ISSUER_URI}
+
+server:
+  port: ${IDENTITY_PORT:8081}
+

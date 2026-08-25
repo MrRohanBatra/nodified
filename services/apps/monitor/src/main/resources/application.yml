@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: monitor
+  profiles:
+    default: local
+  jpa:
+    hibernate:
+      ddl-auto: ${MONITOR_DDL_AUTO:update}
+    open-in-view: false
+    properties:
+      hibernate:
+        default_schema: ${MONITOR_DB_SCHEMA:monitor}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
