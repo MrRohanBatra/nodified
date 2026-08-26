@@ -5,6 +5,8 @@ plugins {
     alias(libs.plugins.protobuf)
 }
 
+version = '0.1.0-SNAPSHOT'
+
 dependencies {
     implementation libs.spring.boot.starter.web
     implementation libs.spring.boot.starter.data.jpa

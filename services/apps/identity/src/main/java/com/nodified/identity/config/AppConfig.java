@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.nodified.identity.dto.response.TenantCreated;
 import com.nodified.identity.entity.Tenants;
+import com.nodified.identity.utils.MetaObject;
 
 @Configuration
 public class AppConfig {
@@ -26,5 +27,10 @@ public class AppConfig {
                     .build();
             });
         return modelMapper;
+    }
+
+    @Bean
+    public MetaObject metaObject(){
+        return new MetaObject();
     }
 }

@@ -6,7 +6,6 @@ plugins {
 
 allprojects {
     group = 'com.nodified'
-    version = '0.1.0-SNAPSHOT'
 
     repositories {
         mavenCentral()
@@ -29,6 +28,9 @@ subprojects {
     plugins.withId('org.springframework.boot') {
         tasks.named('jar') {
             enabled = false
+        }
+        springBoot {
+            buildInfo()
         }
     }
 }
