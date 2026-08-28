@@ -3,9 +3,11 @@ package com.nodified.identity.config;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.nodified.identity.dto.response.TenantCreated;
-import com.nodified.identity.entity.Tenants;
+import com.nodified.identity.entity.Tenant;
 import com.nodified.identity.utils.MetaObject;
 
 @Configuration
@@ -14,9 +16,9 @@ public class AppConfig {
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
         modelMapper
-            .createTypeMap(Tenants.class, TenantCreated.class)
+            .createTypeMap(Tenant.class, TenantCreated.class)
             .setConverter(ctx -> {
-                Tenants source = ctx.getSource();
+                Tenant source = ctx.getSource();
                 if (source == null) {
                     return null;
                 }
@@ -32,5 +34,10 @@ public class AppConfig {
     @Bean
     public MetaObject metaObject(){
         return new MetaObject();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
     }
 }
