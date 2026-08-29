@@ -6,6 +6,8 @@ springdoc = "3.0.3"
 grpc = "1.83.1"
 protoc = "4.33.0"
 tomcatAnnotations = "6.0.53"
+modelMapper="3.2.6"
+
 
 [libraries]
 spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web" }
@@ -24,6 +26,7 @@ grpc-stub = { module = "io.grpc:grpc-stub" }
 tomcat-annotations-api = { module = "org.apache.tomcat:annotations-api", version.ref = "tomcatAnnotations" }
 postgresql = { module = "org.postgresql:postgresql" }
 lombok = { module = "org.projectlombok:lombok" }
+modelMapper = { module = "org.modelmapper:modelmapper" , version.ref = "modelMapper" }
 
 [plugins]
 spring-boot = { id = "org.springframework.boot", version.ref = "springBoot" }
